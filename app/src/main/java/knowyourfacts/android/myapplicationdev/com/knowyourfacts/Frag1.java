@@ -24,8 +24,6 @@ public class Frag1 extends Fragment {
 
     Button btnChange;
     TextView tv;
-    ViewPager vPager;
-
 
     public Frag1() {
         // Required empty public constructor
@@ -36,10 +34,11 @@ public class Frag1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View v = inflater.inflate(R.layout.fragment_1, container, false);
-        btnChange = (Button)v.findViewById(R. id. btnChange);
-        tv = (TextView)v.findViewById(R. id.textView);
-        vPager = (ViewPager)v.findViewById(R.id.viewpager1);
+        final View view = inflater.inflate(R.layout.fragment_1, container, false);
+        btnChange = (Button)view.findViewById(R. id. btnChange);
+        tv = (TextView)view.findViewById(R. id.textView);
+
+        tv.setText("The word 'queue' is the only word in the English language that is still pronounced the same way when the last four letters are removed.");
 
 
         btnChange.setOnClickListener(new View.OnClickListener() {
@@ -47,11 +46,11 @@ public class Frag1 extends Fragment {
             public void onClick(View v) {
                 Random rnd = new Random();
                 int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
-                v.setBackgroundColor(color);
+                view.setBackgroundColor(color);
             }
         });
 
-        return v;
+        return view;
     }
 
 }

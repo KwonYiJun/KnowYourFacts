@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         al = new ArrayList<Fragment>();
         al.add(new Frag1());
         al.add(new Frag2());
+        al.add(new Frag3());
 
         adapter = new MyFragmentPagerAdapter(fm, al);
 
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             int max = vPager.getChildCount();
             if (vPager.getCurrentItem() < max - 1) {
                 int nextPage = vPager.getCurrentItem() + 1;
-                vPager.setCurrentItem(nextPage, true);
+                vPager.setCurrentItem(1, true);
             }
 
         } else if (id == R.id.action_random) {
